@@ -16,7 +16,7 @@ function getSamuraiById(req, res) {
     common.returnErrorJSON();
     return;
   }
-  mongodb.MongoClient().connect(globals.dbURL, function(err, db) {
+  mongodb.MongoClient.connect(globals.dbURL, function(err, db) {
     if (err) throw err;
     let dbo = db.db("swordgame");
     let samurai = dbo.collection("samurai");
