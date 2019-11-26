@@ -2,7 +2,7 @@
   "name": "swordgame",
   "version": "1.0.0",
   "description": "create and showcase a samurai",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },

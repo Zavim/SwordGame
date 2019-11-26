@@ -1,3 +1,5 @@
-# SwordGame
+# Samurai Builder
+Zavier McLean
+Alexander Darling
 
-This is a game about swords.
+Hi Dr. Chung!
