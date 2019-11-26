@@ -13,7 +13,7 @@ const ex = {
 function getSamuraiById(req, res) {
   const id = req.query.id;
   if (id == null) {
-    common.returnErrorJSON();
+    common.returnErrorJSON(res);
     return;
   }
   mongodb.MongoClient.connect(globals.dbURL, function(err, db) {
@@ -24,7 +24,7 @@ function getSamuraiById(req, res) {
       db.close();
       if (err) throw err;
       if (result == null) {
-        common.returnErrorJSON();
+        common.returnErrorJSON(res);
         return;
       }
       result = common.removePrivateVariables(result);
