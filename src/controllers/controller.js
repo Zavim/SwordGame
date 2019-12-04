@@ -9,6 +9,12 @@ let controller = {
   getSamuraiById: function(req, res) {
     samuraiFunctions.getSamuraiById(req, res);
   },
+  createSamurai: function(req, res) {
+    samuraiFunctions.createSamurai(req, res);
+  },
+  updateSamurai: function(req, res) {
+    samuraiFunctions.updateSamurai(req, res);
+  },
 };
 
 module.exports = controller;
