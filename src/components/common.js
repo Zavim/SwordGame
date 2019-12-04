@@ -15,7 +15,7 @@ function removePrivateVariables(obj) {
 }
 
 function returnErrorJSON(res) {
-  res.send({});
+  res.status(400).json({}).end();
 }
 
 module.exports = ex;
