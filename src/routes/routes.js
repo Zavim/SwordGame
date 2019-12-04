@@ -7,4 +7,7 @@ module.exports = function (app) {
   app.get('/api/all-samurai',       controller.getAllSamurai);
   app.post('/api/create-samurai',   controller.createSamurai);
   app.put('/api/update-samurai',    controller.updateSamurai);
+  app.get('/api/get-hairs',         controller.getHairs);
+  app.get('/api/get-faces',         controller.getFaces);
+  app.get('/api/get-patterns',      controller.getPatterns);
 };
