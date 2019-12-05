@@ -8,7 +8,7 @@ var faceArrayPosition = 0;
 var hairArray = ['hair1', 'hair2'];
 var hairArrayPosition = 0;
 
-var patternArray = ['pattern1', 'pattern2', 'pattern3'];
+var patternArray = ['pattern1', 'pattern2'];
 var patternArrayPosition = 0;
 
 function setup() {
@@ -34,12 +34,23 @@ function draw() {
 }
 
 function keyPressed() {
-    if (keyCode === LEFT_ARROW) {
+    if (keyCode === 65) {
         faceArrayPosition = (faceArrayPosition - 1 + faceArray.length) % faceArray.length;
         console.log(faceArrayPosition);
-    } else if (keyCode === RIGHT_ARROW) {
+    } else if (keyCode === 68) {
         faceArrayPosition = (faceArrayPosition + 1 + faceArray.length) % faceArray.length;
         console.log(faceArrayPosition);
-
+    } else if (keyCode === 81) {
+        hairArrayPosition = (hairArrayPosition - 1 + hairArray.length) % hairArray.length;
+        console.log(hairArrayPosition);
+    } else if (keyCode === 69) {
+        hairArrayPosition = (hairArrayPosition + 1 + hairArray.length) % hairArray.length;
+        console.log(hairArrayPosition);
+    } else if (keyCode === 90) {
+        patternArrayPosition = (patternArrayPosition - 1 + patternArray.length) % patternArray.length;
+        console.log(patternArrayPosition);
+    } else if (keyCode === 67) {
+        patternArrayPosition = (patternArrayPosition + 1 + patternArray.length) % patternArray.length;
+        console.log(patternArrayPosition);
     }
 }

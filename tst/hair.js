@@ -10,7 +10,7 @@ function Hair() {
     this.show = function () {
         if (hairArray[hairArrayPosition] == 'hair1') {
             image(hair1, this.x, this.y);
-        } else if (hairArray[hairArrayPosition] == 'hair1') {
+        } else if (hairArray[hairArrayPosition] == 'hair2') {
             image(hair2, this.x, this.y);
         }
     }
