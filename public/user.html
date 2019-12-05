@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        let pathArray = window.location.pathname.split("/");
+        let username = pathArray[pathArray.length - 1];
+        $('#view-link')[0].href = "http://localhost:5000/user/" + username;
+        $.ajax({
+          type: "GET",
+          url: "http://localhost:5000/api/get-samurai",
+          data: {
+            id: username,
+          },
+          success: function(result) {
+            console.log(result);
+          },
+        })
+        .fail(function() {
+          console.log("Failed");
+          $("#message").text("Could not load your Samurai.");
+          $("#showcase").empty();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="/" id="home-link">Samurai Builder</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" id="create-link" href="/creator.html">Create</a>
+              </li>
+            <li class="nav-item active">
+              <a class="nav-link" id="view-link" href="#">View <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" >
+                <a class="nav-link" id="login-link" href="/login.html">Log In</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="register-link" href="/register.html">Register</a>
+            </li>
+          </ul>
+          <!--
+          <form class="form-inline my-2 my-md-0">
+            <input class="form-control" type="text" placeholder="Search">
+          </form>
+          -->
+        </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div id="showcase" class="col-12 d-flex justify-content-center">
+            <img src="http://i.stack.imgur.com/SBv4T.gif" alt="slowpoke" width="300rem"/>
+        </div>
+        <div id="message" class="col-12 d-flex justify-content-center">
+            Give us a minute while we load your Samurai.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
