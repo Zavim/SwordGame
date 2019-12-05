@@ -3,6 +3,7 @@
 const samuraiFunctions = require('../components/samuraiFunctions.js');
 const resourceFunctions = require('../components/resourceFunctions.js');
 const loginFunctions = require('../components/loginFunctions.js');
+const userFunctions = require('../components/userFunctions.js');
 
 let controller = {
   getAllSamurai: function(req, res) {
@@ -32,6 +33,9 @@ let controller = {
   checkLogin: function(req, res) {
     loginFunctions.checkLogin(req, res);
   },
+  visitUserPage: function(req, res) {
+    userFunctions.visitUserPage(req, res);
+  }
 };
 
 module.exports = controller;
