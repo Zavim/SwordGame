@@ -2,6 +2,7 @@
 
 const samuraiFunctions = require('../components/samuraiFunctions.js');
 const resourceFunctions = require('../components/resourceFunctions.js');
+const loginFunctions = require('../components/loginFunctions.js');
 
 let controller = {
   getAllSamurai: function(req, res) {
@@ -24,6 +25,12 @@ let controller = {
   },
   getPatterns:function(req, res) {
     resourceFunctions.getPatterns(req, res);
+  },
+  createAccountRequest: function(req, res) {
+    loginFunctions.createAccountRequest(req, res);
+  },
+  checkLogin: function(req, res) {
+    loginFunctions.checkLogin(req, res);
   },
 };
 
