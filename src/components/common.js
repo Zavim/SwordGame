@@ -3,6 +3,7 @@
 const ex = {
   removePrivateVariables: removePrivateVariables,
   returnErrorJSON: returnErrorJSON,
+  checkNonNullURLParameters: checkNonNullURLParameters,
 };
 
 function removePrivateVariables(obj) {
@@ -16,6 +17,18 @@ function removePrivateVariables(obj) {
 
 function returnErrorJSON(res) {
   res.status(400).json({}).end();
+}
+
+function checkNonNullURLParameters(req, array) {
+  let ret = {};
+  for (let elem of array) {
+    let retElem = req.query[elem];
+    if (retElem == null) {
+      return {};
+    }
+    ret[elem] = retElem;
+  }
+  return ret;
 }
 
 module.exports = ex;
