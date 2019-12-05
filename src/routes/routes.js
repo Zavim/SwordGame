@@ -12,4 +12,5 @@ module.exports = function (app) {
   app.get(  '/api/get-patterns',      controller.getPatterns);
   app.get(  '/api/check-account',     controller.checkLogin);
   app.post( '/api/create-account',    controller.createAccountRequest);
+  app.get(  '/user/[a-zA-Z0-9]+/?',   controller.visitUserPage);
 };
