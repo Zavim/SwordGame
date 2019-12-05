@@ -22,14 +22,24 @@
             showcase.empty();
             let body = document.createElement('img');
             body.src = "http://localhost:5000/assets/bodyfinish.png";
+            $(body).css('z-index', '0');
             showcase.append(body);
             let face = document.createElement('img');
+            face.src = "http://localhost:5000/assets/" + result.face + ".png";
             $(face).css('height', '12px');
             $(face).css('width', '21px');
             $(face).css('position', 'absolute');
             $(face).css('top', '4px');
+            $(face).css('z-index', '1');
             showcase.append(face);
-            face.src = "http://localhost:5000/assets/" + result.face + ".png";
+            let hair = document.createElement('img');
+            hair.src = "http://localhost:5000/assets/" + result.hair + ".png";
+            $(hair).css('height', '21px');
+            $(hair).css('width', '35px');
+            $(hair).css('position', 'absolute');
+            $(hair).css('top', '-3')
+            $(hair).css('z-index', '2');
+            showcase.append(hair);
             $("#message").text(username + "'s Samurai");
           },
         })
