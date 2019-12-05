@@ -18,6 +18,16 @@
           },
           success: function(result) {
             console.log(result);
+            let showcase = $("#showcase");
+            showcase.empty();
+            let body = document.createElement('img');
+            
+            body.src = "http://localhost:5000/assets/bodyfinish.png";
+            showcase.append(body);
+            let face = document.createElement('img');
+            showcase.append(face);
+            face.src = "http://localhost:5000/assets/" + result.face + ".png";
+            $("#message").text(username + "'s Samurai");
           },
         })
         .fail(function() {
