@@ -1,5 +1,5 @@
-function Head() {
-    headimage = loadImage('assets/CC_test_head_outline.png');
+function Body() {
+    headimage = loadImage('assets/bodyfinish.png');
     imageMode(CENTER);
 
     this.x = (windowWidth / 2) * 2;

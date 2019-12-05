@@ -1,11 +1,11 @@
 function Face() {
-    face1 = loadImage('assets/CC_test_face.png');
+    face1 = loadImage('assets/face1.png');
     face2 = loadImage('assets/face2.png');
     face3 = loadImage('assets/face3.png');
     imageMode(CENTER);
 
     this.x = (windowWidth / 2) * 2;
-    this.y = (windowHeight / 3) * 2;
+    this.y = (windowHeight / 3) - 38;
 
 
     this.show = function () {

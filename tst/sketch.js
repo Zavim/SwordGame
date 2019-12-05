@@ -1,11 +1,11 @@
-var head;
+var body;
 var face;
 var faceArray = ['face1', 'face2', 'face3'];
 var faceArrayPosition = 0;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    head = new Head();
+    body = new Body();
     face = new Face();
     next_arrow = loadImage('assets/next_arrow.png');
     prev_arrow = loadImage('assets/prev_arrow.png');
@@ -16,7 +16,7 @@ function draw() {
     image(next_arrow, windowWidth / 2 + 230, windowHeight / 2);
     image(prev_arrow, windowWidth / 2 - 230, windowHeight / 2);
     scale(.5);
-    head.show();
+    body.show();
     face.show();
 
 }
