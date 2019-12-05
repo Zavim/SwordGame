@@ -21,10 +21,13 @@
             let showcase = $("#showcase");
             showcase.empty();
             let body = document.createElement('img');
-            
             body.src = "http://localhost:5000/assets/bodyfinish.png";
             showcase.append(body);
             let face = document.createElement('img');
+            $(face).css('height', '12px');
+            $(face).css('width', '21px');
+            $(face).css('position', 'absolute');
+            $(face).css('top', '4px');
             showcase.append(face);
             face.src = "http://localhost:5000/assets/" + result.face + ".png";
             $("#message").text(username + "'s Samurai");
@@ -68,10 +71,10 @@
     </nav>
     <div class="container">
       <div class="row">
-        <div id="showcase" class="col-12 d-flex justify-content-center">
+        <div id="showcase" class="mt-2 col-12 d-flex justify-content-center">
             <img src="http://i.stack.imgur.com/SBv4T.gif" alt="slowpoke" width="300rem"/>
         </div>
-        <div id="message" class="col-12 d-flex justify-content-center">
+        <div id="message" class="mt-2 col-12 d-flex justify-content-center">
             Give us a minute while we load your Samurai.
         </div>
       </div>
