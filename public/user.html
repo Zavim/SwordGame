@@ -40,6 +40,14 @@
             $(hair).css('top', '-3')
             $(hair).css('z-index', '2');
             showcase.append(hair);
+            let pattern = document.createElement('img');
+            pattern.src = "http://localhost:5000/assets/" + result.pattern + ".png";
+            $(pattern).css('height', '32px');
+            $(pattern).css('width', '42px');
+            $(pattern).css('position', 'absolute');
+            $(pattern).css('top', '23')
+            $(pattern).css('z-index', '-1');
+            showcase.append(pattern);
             $("#message").text(username + "'s Samurai");
           },
         })
