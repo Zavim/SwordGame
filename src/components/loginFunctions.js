@@ -34,15 +34,15 @@ function checkLogin(req, res) {
 }
 
 function createAccountRequest(req, res) {
-  let username = req.query.username;
-  let password = req.query.password;
+  let username = req.body.username;
+  let password = req.body.password;
   for (let elem of [username, password]) {
     if (elem == null) {
       common.returnErrorJSON(res);
       return;
     }
   }
-  console.log("Validated " + username + " and " + password);
+  console.log("Validated new user credentials, UN: " + username + ", PW: " + password);
   createAccount(username, password, res);
 }
 
@@ -54,7 +54,7 @@ function createAccount(username, password, res) {
     users.findOne({"username": username}, function(err, result) {
       if (err) throw err;
       if (result != null) {
-        common.returnErrorJSON(res);
+        res.status(200).json({"RegistrationStatus": "Fail"}).end();
         return;
       }
       let newUser = {
@@ -69,6 +69,7 @@ function createAccount(username, password, res) {
           if (err) throw err;
           db.close();
           console.log("A new user with username " + username + " has been added to the database");
+          newUser["RegistrationStatus"] = "Success";
           res.send(newUser);
         });
       });
