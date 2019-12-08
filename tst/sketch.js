@@ -52,5 +52,27 @@ function keyPressed() {
     } else if (keyCode === 67) {
         patternArrayPosition = (patternArrayPosition + 1 + patternArray.length) % patternArray.length;
         console.log(patternArrayPosition);
+    } else if (keyCode == 13) {
+        let newFace = faceArray[faceArrayPosition];
+        let newHair = hairArray[hairArrayPosition];
+        let newPattern = patternArray[patternArrayPosition];
+        $.ajax({
+            type: "PUT",
+            url: "http://localhost:5000/api/update-samurai",
+            data: {
+              username: Cookies.get("un"),
+              face: newFace,
+              hair: newHair,
+              pattern: newPattern,
+            },
+            success: function(result) {
+              console.log(result);
+              if (result.RegistrationStatus == "Success") {
+                console.log("Update successful");
+                window.location.replace("http://localhost:5000/user/" + Cookies.get("un"));
+              } else {
+                console.log("Update failed");
+              }
+        }});
     }
 }
