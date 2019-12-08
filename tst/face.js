@@ -5,7 +5,7 @@ function Face() {
     imageMode(CENTER);
 
     this.x = (windowWidth / 2) * 2;
-    this.y = (windowHeight / 3) * 1.22;
+    this.y = (windowHeight / 3) * 1.22 + 100;
 
 
     this.show = function () {
